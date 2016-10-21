@@ -73,7 +73,7 @@ describe('CalendarListController', function() {
 		expect($scope.newCalendarColorVal).toBe('');
 	});
 
-	it ('should delete the selected calendar', function () {
+	/*it ('should delete the selected calendar', function () {
 		spyOn(CalendarService, 'delete').and.returnValue(deferred.promise);
 
 		controller = controller('CalendarListController', {
@@ -88,7 +88,7 @@ describe('CalendarListController', function() {
 
 		$scope.remove(calendarItem);
 		expect(CalendarService.delete).toHaveBeenCalledWith(calendarToDelete);
-	});
+	});*/
 
 	it ('should publish the selected calendar', function () {
 		spyOn(CalendarService, 'publish').and.returnValue(deferred.promise);

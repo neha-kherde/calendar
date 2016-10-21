@@ -212,6 +212,16 @@
 	box-sizing: border-box;
 }
 
+#app-navigation .app-navigation-list-item {
+	max-height: 1000px;
+	transition: 200ms cubic-bezier(.22, .61, .36, 1) all;
+}
+
+#app-navigation .app-navigation-list-item.deleted {
+	max-height: 0;
+	overflow: hidden;
+}
+
 #app-navigation .app-navigation-list-item .utils {
 	display: inline-block;
 }
@@ -497,9 +507,11 @@ ul.dropdown-menu li > a:hover {
 .fc-unthemed tr td {
 	border-top-color: #eee;
 }
+
 .fc-unthemed tr:nth-child(even) td {
 	border-top-color: #f8f8f8;
 }
+
 .fc-unthemed th,
 .fc-unthemed td,
 .fc-unthemed thead,

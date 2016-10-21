@@ -303,13 +303,20 @@ app.controller('CalendarListController', ['$scope', '$rootScope', '$window', 'Ca
 		};
 
 		$scope.remove = function (item) {
-			CalendarService.delete(item.calendar).then(function() {
-				$scope.$parent.calendars = $scope.$parent.calendars.filter(function(elem) {
-					return elem !== item.calendar;
+			item.delete().then(function() {
+				CalendarService.delete(item.calendar).then(function () {
+					$scope.$parent.calendars = $scope.$parent.calendars.filter(function (elem) {
+						return elem !== item.calendar;
+					});
+					if (!$scope.$$phase) {
+						$scope.$apply();
+					}
 				});
+			}).catch(function() {
 				if (!$scope.$$phase) {
 					$scope.$apply();
 				}
+				return true;
 			});
 		};
 
