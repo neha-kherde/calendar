@@ -33,7 +33,8 @@ if($_['isPublic']) {
 $styles = [
 	'../js/vendor/fullcalendar/dist/fullcalendar',
 	'../js/vendor/jquery-timepicker/jquery.ui.timepicker',
-	'public/app.min'
+	'../js/vendor/tether/dist/css/tether',
+	'public/app.min',
 ];
 
 foreach ($styles as $style) {
@@ -51,7 +52,8 @@ $scripts = [
 	'vendor/fullcalendar/dist/locale-all',
 	'vendor/davclient.js/lib/client',
 	'vendor/hsl_rgb_converter/converter',
-	'public/app.min'
+	'vendor/tether/dist/js/tether',
+	'public/app.min',
 ];
 
 if ($_['needsAutosize']) {
